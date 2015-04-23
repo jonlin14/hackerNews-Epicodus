@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
     <head>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <title>Hacker News</title>
 
     </head>
@@ -10,7 +10,7 @@
     <body ng-controller='newsCtrl'>
         <ul>
             <li ng-repeat="item in programs | orderBy:'vote':true">
-                <span ng-show='item.vote != 0'>{{ item.vote }}</span><button ng-click='addValue(item)' class="btn btn-danger btn-xs">Upvote</button> <a ng-click='showStory = true'>{{ item.title.$text }}</a>
+                <span ng-show="item.vote != 0">{{ item.vote }}</span><span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span> <a ng-click='showStory = true'>{{ item.title.$text }}</a>
                 <span ng-show='showStory' ng-click='showStory = false'>{{ item.teaser.$text}}</p></span>
 
             </li>
@@ -20,5 +20,6 @@
     <script src="lib/angular-ui-router.js"></script>
     <script src="app.js"></script>
     <script src="controllers/newsCtrl.js"></script>
+
 
 </html>
