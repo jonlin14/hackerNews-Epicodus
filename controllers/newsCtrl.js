@@ -2,11 +2,14 @@ myApp.controller('newsCtrl', function newsCtrl($scope) {
     $scope.stories = {
         story : {
             name :'Obama wins presidency',
-            value : 0
+            vote : 0
         },
         story1 : {
             name :'Bp Oil Spill',
-            value : 0
+            vote : 0
         }
+    }
+    $scope.addValue = function(item) {
+        item.vote += 1;
     }
 });

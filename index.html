@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
     <head>
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <title>Hacker News</title>
 
     </head>
     <body ng-controller='newsCtrl'>
         <ul>
             <li ng-repeat="item in stories">
-                {{ item.name }}
+                {{ item.vote }} <button ng-click='addValue(item)' class="btn btn-danger btn-xs">Upvote</button> {{ item.name }} 
             </li>
         </ul>
     </body>
