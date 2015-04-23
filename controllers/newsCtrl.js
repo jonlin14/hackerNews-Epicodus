@@ -7,7 +7,7 @@ myApp.controller('newsCtrl', function newsCtrl($scope, $http) {
 
     $http({
         method: 'JSONP',
-        url: 'http://api.npr.org/query?id=1001,1003&fields=title&output=JSON&apiKey=MDE4OTMxNTM0MDE0Mjk2NzAwMzc1ODk3YQ001' + '&callback=JSON_CALLBACK'
+        url: 'http://api.npr.org/query?id=1001,1003&output=JSON&apiKey=MDE4OTMxNTM0MDE0Mjk2NzAwMzc1ODk3YQ001' + '&callback=JSON_CALLBACK'
     }).success(function(data, status) {
         $scope.programs = data.list.story
         console.log($scope.programs)

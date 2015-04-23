@@ -10,7 +10,9 @@
     <body ng-controller='newsCtrl'>
         <ul>
             <li ng-repeat="item in programs | orderBy:'vote':true">
-                <span ng-show='item.vote != 0'>{{ item.vote }}</span><button ng-click='addValue(item)' class="btn btn-danger btn-xs">Upvote</button> {{ item.title.$text }}
+                <span ng-show='item.vote != 0'>{{ item.vote }}</span><button ng-click='addValue(item)' class="btn btn-danger btn-xs">Upvote</button> <a ng-click='showStory = true'>{{ item.title.$text }}</a>
+                <span ng-show='showStory' ng-click='showStory = false'>{{ item.teaser.$text}}</p></span>
+
             </li>
         </ul>
     </body>
