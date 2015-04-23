@@ -7,8 +7,8 @@
     </head>
     <body ng-controller='newsCtrl'>
         <ul>
-            <li ng-repeat="item in stories">
-                {{ item.vote }} <button ng-click='addValue(item)' class="btn btn-danger btn-xs">Upvote</button> {{ item.name }} 
+            <li ng-repeat="item in stories | orderBy:'vote':true">
+                {{ item.vote }} <button ng-click='addValue(item)' class="btn btn-danger btn-xs">Upvote</button> {{ item.name }}
             </li>
         </ul>
     </body>
@@ -16,4 +16,5 @@
     <script src="lib/angular-ui-router.js"></script>
     <script src="app.js"></script>
     <script src="controllers/newsCtrl.js"></script>
+
 </html>
