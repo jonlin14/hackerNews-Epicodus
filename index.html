@@ -2,15 +2,19 @@
 <html ng-app="myApp">
     <head>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css">
         <title>Hacker News</title>
 
     </head>
     <div class = "jumbotron">
-        <p> Better than Reddit! </p>
+        <p> Super Awesome Text Collator with Arrows and GlyphIcons and Sorting and Stuff </p>
+    </div>
     <body ng-controller='newsCtrl'>
         <ul>
             <li ng-repeat="item in programs | orderBy:'vote':true">
-                <span ng-show="item.vote != 0">{{ item.vote }}</span><span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span> <a ng-click='showStory = true'>{{ item.title.$text }}</a>
+                <span ng-click='addValue(item)' class="glyphicon glyphicon-arrow-up"></span>
+                <span ng-click='lowerValue(item)' class="glyphicon glyphicon-arrow-down"></span>
+                <span>{{ item.vote }}</span> <a ng-click='showStory = true'>{{ item.title.$text }}</a>
                 <span ng-show='showStory' ng-click='showStory = false'>{{ item.teaser.$text}}</p></span>
 
             </li>

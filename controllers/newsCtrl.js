@@ -4,6 +4,9 @@ myApp.controller('newsCtrl', function newsCtrl($scope, $http) {
     $scope.addValue = function(item) {
         item.vote += 1;
     }
+    $scope.lowerValue = function(item) {
+        item.vote -= 1;
+    }
 
     $http({
         method: 'JSONP',
