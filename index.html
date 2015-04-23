@@ -5,10 +5,12 @@
         <title>Hacker News</title>
 
     </head>
+    <div class = "jumbotron">
+        <p> Better than Reddit! </p>
     <body ng-controller='newsCtrl'>
         <ul>
-            <li ng-repeat="item in stories | orderBy:'vote':true">
-                {{ item.vote }} <button ng-click='addValue(item)' class="btn btn-danger btn-xs">Upvote</button> {{ item.name }}
+            <li ng-repeat="item in programs | orderBy:'vote':true">
+                <span ng-show='item.vote != 0'>{{ item.vote }}</span><button ng-click='addValue(item)' class="btn btn-danger btn-xs">Upvote</button> {{ item.title.$text }}
             </li>
         </ul>
     </body>
